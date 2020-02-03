@@ -1,0 +1,11 @@
+whenSetup(function () {
+  makeNewDanceSpriteGroup(5, "FROG", "circle");
+  makeAnonymousDanceSprite("UNICORN", {x: 200, y: 200});
+  setBackgroundEffectWithPalette("music_wave", "tropical");
+});
+
+everySeconds(2, "seconds", function () {
+  changeMoveEachLR("FROG", MOVES.Roll, -1);
+  doMoveEachLR("UNICORN", MOVES.ClapHigh, 1);
+  setBackgroundEffectWithPalette("rand", "tropical");
+});
